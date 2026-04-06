@@ -1,68 +1,53 @@
-# 🚀 LeetCode Problem Solving Journey
+# 🚀 3637. Trionic Array I
 
-## 🎯 Repository Purpose
-This repository contains my LeetCode problem-solving journey focused on:
-* **Data Structures & Algorithms**
-* **Interview Preparation**
-* **FAANG/Product-Based Company Coding Practice**
-* **Clean Code Implementation**
+<div align="center">
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen?style=for-the-badge" alt="Difficulty: Easy" />
+  <img src="https://img.shields.io/badge/Topics-Array-blue?style=for-the-badge" alt="Topics: Array" />
+</div>
 
 ---
 
-## 🧠 Problem Categories
+## 📝 Problem Description
+You are given an integer array `nums` of length `n`. An array is **trionic** if there exist indices $0 < p < q < n - 1$ such that:
+* **Segment 1:** `nums[0...p]` is **strictly** increasing.
+* **Segment 2:** `nums[p...q]` is **strictly** decreasing.
+* **Segment 3:** `nums[q...n - 1]` is **strictly** increasing.
 
-### 📂 Arrays & Two Pointers
-* **[Container With Most Water](https://leetcode.com/problems/container-with-most-water)**
-    * **Description**: Find two lines that form a container with the x-axis to store the maximum amount of water.
-    * **Constraint**: You may not slant the container.
-* **3637. Trionic Array I**
-    * **Description**: Determine if an array has a strictly increasing, then strictly decreasing, then strictly increasing pattern.
-    * **Condition**: Indices $0 < p < q < n - 1$ must exist to define the three segments.
-
-### 📂 Future Focus Areas
-* Strings
-* HashMap / HashSet
-* Sliding Window
-* Recursion & Backtracking
-* Stack & Queue
-* Linked List
-* Trees & Graphs
-* Dynamic Programming
-* Greedy Algorithms
-* Binary Search
+Return `true` if `nums` is trionic, otherwise return `false`.
 
 ---
 
-## 📊 Progress Tracker
-| Difficulty | Solved |
-| :--- | :--- |
-| 🟢 **Easy** | 1 |
-| 🟡 **Medium** | 1 |
-| 🔴 **Hard** | 0 |
-| **Status** | **Actively Practicing** |
+## 💡 Examples
+
+### Example 1
+**Input:** `nums = [1,3,5,4,2,6]`  
+**Output:** `true`  
+**Explanation:** * Pick $p = 2$ and $q = 4$.
+* `nums[0...2] = [1, 3, 5]` is strictly increasing ($1 < 3 < 5$).
+* `nums[2...4] = [5, 4, 2]` is strictly decreasing ($5 > 4 > 2$).
+* `nums[4...5] = [2, 6]` is strictly increasing ($2 < 6$).
+
+### Example 2
+**Input:** `nums = [2,1,3]`  
+**Output:** `false`  
+**Explanation:** There is no way to pick $p$ and $q$ to form the required three segments.
 
 ---
 
-## 🏆 Skills Gained
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Data Structures](https://img.shields.io/badge/Data_Structures-00599C?style=for-the-badge)
-![Algorithms](https://img.shields.io/badge/Algorithms-47A248?style=for-the-badge)
+## ⚙️ Constraints
+* `3 <= n <= 100`
+* `-1000 <= nums[i] <= 1000`
 
 ---
 
-## 🗺️ Learning Roadmap
-`Beginner` ⮕ `DSA Mastery` ⮕ `Coding Interviews` ⮕ **Software Engineer**
+## 💻 Implementation Idea
+To solve this, we can use a **single-pass linear scan**:
+1.  **Find the first peak ($p$):** Move as long as the array is strictly increasing. If we never move or hit the end, it's not trionic.
+2.  **Find the valley ($q$):** From $p$, move as long as the array is strictly decreasing. If we don't move or hit the end, it's not trionic.
+3.  **Check final climb:** From $q$, move as long as the array is strictly increasing. If we reach the end of the array, return `true`.
 
 ---
 
-## 👨‍💻 Developer Section
-* **Role**: AI & Software Engineering Student
-* **Passion**: DSA Enthusiast
-* **Target**: Product-Based Company Engineer
-* **Local Path**: `C:\Users\erohi\OneDrive\Desktop\Git-Code`
-
----
-
-## 🤝 Contribution
-Contributions to optimize these solutions are welcome! Feel free to open a Pull Request.
+<div align="center">
+  <sub>Repository: <b>C:\Users\erohi\OneDrive\Desktop\Git-Code</b></sub>
+</div>
