@@ -1,13 +1,20 @@
 class Solution {
     public int reverse(int x) {
-        int reversed = 0;
-        while (x != 0) {
-            int pop = x % 10;
-            x /= 10;
-            if (reversed > Integer.MAX_VALUE/10 || (reversed == Integer.MAX_VALUE / 10 && pop > 7)) return 0;
-            if (reversed < Integer.MIN_VALUE/10 || (reversed == Integer.MIN_VALUE / 10 && pop < -8)) return 0;
-            reversed = reversed * 10 + pop;
+        int count = 0;
+        int f = x;
+        int p = 0;
+        if (x < 0) {
+            x = -x;
         }
-        return reversed;
+        while (x > 0) {
+            int k = x % 10;
+            if (count > 214748364 || count < -214748364)
+                return 0;
+            count = count * 10 + k;
+            x = x / 10;
+        }
+        if (f < 0)
+            count = -count;
+        return count;
     }
 }

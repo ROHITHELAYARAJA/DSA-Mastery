@@ -44,4 +44,4 @@ Given a signed 32-bit integer `x`, return `x` with its digits reversed. If rever
 ---
 
 ## 🛠️ Logic Note
-Since we cannot use 64-bit integers, we must check for overflow **before** multiplying the current reversed number by 10 and adding the next digit..
+Since we cannot use 64-bit integers, we must check for overflow **before** multiplying the current reversed number by 10 and adding the next digit.

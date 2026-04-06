@@ -66,4 +66,4 @@ Implement the `myAtoi(string s)` function, which converts a string to a 32-bit s
 * **Empty String:** Should return `0`.
 * **Only Signs/Space:** `"+ "`, `"  -"` should return `0`.
 * **Overflow:** `"91283472332"` should return `2147483647` (INT_MAX).
-* **Underflow:** `"-91283472332"` should return `-2147483648` (INT_MIN)..
+* **Underflow:** `"-91283472332"` should return `-2147483648` (INT_MIN).
